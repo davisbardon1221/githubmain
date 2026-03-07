@@ -19,6 +19,22 @@
             width: 90%;
             overflow: hidden;
             animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+            font-weight: 700;
+
+    padding: 30px 30px;
+    min-height: 300px;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    width: 620px;
+    display: block;
+    margin: 0 auto;
+    background-color: #fff;
+    z-index: 9999999;
+    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 27%;
+    left: 33%;
+    cursor: pointer;
         }
 
         .call-box::before {

